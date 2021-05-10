@@ -4,8 +4,8 @@
 
 class Alice
 {
-	int health = 100;
-	int max_health = 100;
+	int current_health = 100;
+	const int max_health = 100;
 	int base_attack = 15;
 
 
@@ -26,15 +26,15 @@ public:
 
 	    '@}
 		<O\
-		/ >
+		/_>
 
 		'@}
 		<O\
-		/ \
+		/_\
 		
 		{@'
 		/o>
-		< \
+		<_\
 
 		'@'
 		/o\
