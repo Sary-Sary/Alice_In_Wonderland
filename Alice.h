@@ -4,12 +4,47 @@
 
 class Alice
 {
-	int health = 100;
-	int max_health = 100;
-	int base_attack = 15;
-
+	int current_health = 100;
+	const int max_health = 100;
+	int current_attack = 15;
+	const int base_attack = 15;
 
 public:
+
+	int get_attack() {
+
+		return current_attack;
+
+	}
+
+	void change_attack(int weapon_attack) {
+
+		current_attack = weapon_attack;
+		return;
+
+	}
+
+	void is_hit(int enemy_attack) {
+
+		current_health -= enemy_attack;
+		return;
+
+	}
+
+	bool died() {
+
+		return current_health < 1;
+
+	}
+
+	int get_current_health() {
+
+		return current_health;
+
+	}
+
+	void add_weapon();
+
 	void sprite_idle() {
 
 		/*
@@ -26,15 +61,15 @@ public:
 
 	    '@}
 		<O\
-		/ >
+		/_>
 
 		'@}
 		<O\
-		/ \
+		/_\
 		
 		{@'
 		/o>
-		< \
+		<_\
 
 		'@'
 		/o\
