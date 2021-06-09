@@ -71,7 +71,8 @@ public:
 		case 'a': move_left(maze, Alice); break;
 		case 's': move_down(maze, Alice); break;
 		case 'd': move_right(maze, Alice); break;
-		case 'm': 
+		case 'm': maze.show_mini_map(); break;
+		case 'i': //Alice.show_weapon(); break;
 		}
 
 		return maze.exit_has_been_reached();

@@ -17,7 +17,7 @@ public:
 
 	void weapon(Alice Alice) {
 
-		Alice.add_weapon();
+		Alice.pick_weapon();
 		attack(Alice);
 
 	}
@@ -55,7 +55,7 @@ public:
 			direction = _getch();
 			switch (direction) {
 
-			case '\n': action(Alice); break;
+			case '\r': action(Alice); break;
 			case 'w': move_pointer_up(); break;
 			case 's': move_pointer_down(); break;
 			}
