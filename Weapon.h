@@ -1,5 +1,6 @@
 #pragma once
 #include "rang.hpp"
+#include <random>
 
 enum Weapons {
 
@@ -22,7 +23,7 @@ class Weapon
 	"Reduces Alice's abilities.", "Multiplies Alice's abilities tenfold.", "Shrinks the enemy and gives Alice an advantage.",
 	"Turns Alice invisible and moves her two positions away by change, ignoring enemies.",
 	"Alice does not know the colour of the rose when she decides to use it. The chance to get a red rose is 50%."};
-	const char* weapon[6] = { "     Teleportation Potion     ", "       Drink-me Potion        ", 
+	const char* weapon_name[6] = { "     Teleportation Potion     ", "       Drink-me Potion        ", 
 		"        Eat-me Cookie         ", "          Magic Can           ", "       Invisibility Cap       ", 
 		"      White or Red Rose       " };
 	int weapon_number;
@@ -60,14 +61,6 @@ public:
 
 	}
 
-	void filler_space() {
-
-		std::cout << "|";
-		for ()
-		return;
-
-	}
-
 	void change_to_chosen() {
 
 		rang::fg::black;
@@ -87,7 +80,7 @@ public:
 		std::cout << "--------------------------------\n";
 		std::cout << "|";
 		if (chosen) change_to_chosen();
-		std::cout << weapons[i];
+		std::cout << weapon_name[i];
 		std::cout << "|\n";
 		std::cout << "--------------------------------\n";
 
@@ -121,4 +114,9 @@ public:
 --------------------------------
 |            Back              |
 --------------------------------
+
+.-^-.  
+|___|
+
+
 */

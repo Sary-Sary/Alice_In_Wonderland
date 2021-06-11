@@ -7,24 +7,17 @@
 #include <fcntl.h>
 #include <io.h>
 #include "Game.h"
+//#include <QApplication>
 
 int main()
 {
-	/*for (int i = 0; i < 10; i++) {
-
-		system("CLS");
-		std::cout << "'@}\n<O\\\n/ >";
-		//std::chrono::seconds dura(1);
-		system("CLS");
-		//std::this_thread::sleep_for(dura);
-		std::cout << "'@}\n/O\\\n/ \\";
-		//std::this_thread::sleep_for(dura);
-		system("CLS");
-		std::cout << "'@}\n/O>\n >";
-	}*/
 	
 	Game game;
 	game.game();
+
+	std::cout << rang::bg::black;
+	std::cout << rang::fg::black;
+
 	return 0;
 }
 

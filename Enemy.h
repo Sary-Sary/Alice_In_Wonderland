@@ -14,6 +14,7 @@ class Enemy
 	const unsigned max_health = 100;
 	unsigned current_health = 100;
 	unsigned attack = 0;
+	int enemy_number;
 
 public:
 
@@ -21,11 +22,16 @@ public:
 
 		auto gen = std::mt19937{ std::random_device{}() };
 		auto dist = std::uniform_int_distribution<int>{ 0, 3 };
-		enemy = static_cast<Enemies>(enemies[dist(gen)]);
+		enemy_number = dist(gen);
+		enemy = static_cast<Enemies>(enemies[enemy_number]);
 
 		current_health = 100;
 		attack = get_attack();
 	}
+
+	int get_enemy() { return enemy_number; }
+
+	const unsigned get_max_health() { return max_health; }
 
 	void is_hit(int alices_attack) {
 
@@ -56,3 +62,10 @@ public:
 
 };
 
+/*
+
+.-=-.
+<-0->
+v.v.v
+
+*/

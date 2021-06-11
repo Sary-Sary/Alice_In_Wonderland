@@ -1,11 +1,11 @@
 /*
 
-*****************************
+**************;+++;***************
 
 THE FOLLOWING CODE WAS WRITTEN BY GITHUB USER agauniyal AND CO. IT IS USED FOR CUSTOMISING TEXT.
 https://github.com/agauniyal/rang
 
-*****************************
+**************;+++;***************
 
 */
 

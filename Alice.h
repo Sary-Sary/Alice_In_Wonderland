@@ -2,6 +2,9 @@
 #include <fcntl.h>
 #include <io.h>
 #include "Weapon.h"
+#include "Maze.h"
+#include <vector>
+#include <conio.h>
 
 class Alice
 {
@@ -13,7 +16,17 @@ class Alice
 
 public:
 
-	int amount_of_weapons() { return weapons_alice_has.size(); }
+	const unsigned get_max_health() { return max_health; }
+
+	unsigned amount_of_weapons() { return weapons_alice_has.size(); }
+
+	void return_to_default() {
+
+		current_health = max_health;
+		current_attack = base_attack;
+		return;
+
+	}
 
 	void change_to_chosen() {
 
@@ -47,6 +60,7 @@ public:
 			weapons_alice_has[i].show_weapon(weapons_alice_has[i].get_weapon(), i == chosen);
 		show_back_button(chosen == 8);
 		if (chosen != 8) weapons_alice_has[chosen].show_description(weapons_alice_has[chosen].get_weapon());
+		return;
 	}
 
 	void increase_decrease_chosen(unsigned & action, int add) {
@@ -81,7 +95,7 @@ public:
 		return;
 	}
 	
-	void pick_weapon() {
+	void pick_weapon(Maze maze) {
 
 		char action = 'g';
 		unsigned chosen = 0;
@@ -103,7 +117,7 @@ public:
 		} while (action != '\r');
 
 		if (chosen == amount_of_weapons() + 1) return;
-		use_weapon(chosen);
+		use_weapon(chosen, maze);
 		return;
 
 	}
@@ -172,14 +186,16 @@ public:
 		/o>
 		<_\
 
-		'@'
+		 р
+		/ \
+		===
+
+		'о'
 		/o\
 		===
 
-		 8
-		/o\
-		===
-
+		'о'
+		/
 		*/
 	}
 
